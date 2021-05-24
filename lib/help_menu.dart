@@ -81,7 +81,7 @@ class _SimpleRecorderState extends State<SimpleRecorder> {
     setState(() {
       _position = newPosition;
     });
-    message = "J'ai besoin d'aide, voici ou je me trouve: https://www.google.com/maps/search/?api=1&query=@${_position != null ? _position.latitude.toString() : '0'},${_position != null ? _position.longitude.toString() : '0'}";
+    message = "J'ai besoin d'aide, voici ou je me trouve: https://www.google.com/maps/search/?api=1&query=${_position != null ? _position.latitude.toString() : '0'},${_position != null ? _position.longitude.toString() : '0'}";
     if (result != null && result) {
       await telephony.sendSms(
           to: "$first",
