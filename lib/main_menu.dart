@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'help_menu.dart';
 
 class main_menu extends StatefulWidget {
   const main_menu({Key? key}) : super(key: key);
@@ -13,6 +15,20 @@ class main_menu extends StatefulWidget {
 }
 
 class _main_menuState extends State<main_menu> {
+  SharedPreferences? preferences;
+
+  @override
+  void initState() {
+    super.initState();
+    initializePreference().whenComplete((){
+      setState(() {});
+    });
+  }
+
+  Future<void> initializePreference() async{
+    this.preferences = await SharedPreferences.getInstance();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -42,11 +58,9 @@ class _main_menuState extends State<main_menu> {
                   width: 300,
                   height: 150,
                   child: CupertinoButton(
-                    color: CupertinoColors.destructiveRed,
-                    child: Text('😭 HELP 😭', style: TextStyle(color: Colors.white, fontSize: 30)),
+                    color: CupertinoColors.systemRed,
+                    child: Text("J'ai besoin d'aide", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700)),
                     onPressed: () {
-                      // You should do something with the result of the action sheet prompt
-                      // in a real app but this is just a demo.
                       showCupertinoModalPopup<void>(
                         context: context,
                         builder: (context) {
@@ -56,7 +70,9 @@ class _main_menuState extends State<main_menu> {
                               CupertinoActionSheetAction(
                                 child: const Text("Oui j'ai besoin d'aide"),
                                 isDestructiveAction: true,
-                                onPressed: () => Navigator.pop(context),
+                                onPressed: () => Navigator.push( context,
+                                CupertinoPageRoute(builder: (context) => SimpleRecorder())
+                                ),
                               ),
                               CupertinoActionSheetAction(
                                 child: const Text('Non'),

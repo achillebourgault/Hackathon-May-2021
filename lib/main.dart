@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'main_menu.dart';
+import 'contacts_menu.dart';
 
 void main() {
   runApp(ConnectedKeychainApp());
@@ -39,12 +39,8 @@ class _HomePageState extends State<HomePage> {
             icon: main_menu.icon,
           ),
           BottomNavigationBarItem(
-            label: main_menu.title,
-            icon: main_menu.icon,
-          ),
-          BottomNavigationBarItem(
-            label: main_menu.title,
-            icon: main_menu.icon,
+            label: contacts_menu.title,
+            icon: contacts_menu.icon,
           ),
         ],
       ),
@@ -57,13 +53,8 @@ class _HomePageState extends State<HomePage> {
             );
           case 1:
             return CupertinoTabView(
-              defaultTitle: main_menu.title,
-              builder: (context) => main_menu(),
-            );
-          case 2:
-            return CupertinoTabView(
-              defaultTitle: main_menu.title,
-              builder: (context) => main_menu(),
+              defaultTitle: contacts_menu.title,
+              builder: (context) => contacts_menu(),
             );
           default:
             assert(false, 'Unexpected tab');
