@@ -29,4 +29,4 @@ There are still things to do in the application:
 
 ## WARNING
 
-Althoug this application is intended to be cross-platform it has only been tested during development using Android Studio, Android 9 and Android 11. **It has not been tested on iOS** since you need an Apple Developper Account to build the application, so things can be broken on the iOS app.
+Although this application is intended to be cross-platform it has only been tested during development using Android Studio, Android 9 and Android 11. **It has not been tested on iOS** since you need an Apple Developper Account to build the application, so things can be broken on the iOS app.
