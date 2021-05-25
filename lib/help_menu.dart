@@ -11,12 +11,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 typedef _Fn = void Function();
 
-class SimpleRecorder extends StatefulWidget {
+class HelpMenu extends StatefulWidget {
   @override
-  _SimpleRecorderState createState() => _SimpleRecorderState();
+  _HelpMenuState createState() => _HelpMenuState();
 }
 
-class _SimpleRecorderState extends State<SimpleRecorder> {
+class _HelpMenuState extends State<HelpMenu> {
   FlutterSoundPlayer? _mPlayer = FlutterSoundPlayer();
   FlutterSoundRecorder? _mRecorder = FlutterSoundRecorder();
   bool _mPlayerIsInited = false;

@@ -71,7 +71,7 @@ class _main_menuState extends State<main_menu> {
                                 child: const Text("Oui j'ai besoin d'aide"),
                                 isDestructiveAction: true,
                                 onPressed: () => Navigator.push( context,
-                                CupertinoPageRoute(builder: (context) => SimpleRecorder())
+                                CupertinoPageRoute(builder: (context) => HelpMenu())
                                 ),
                               ),
                               CupertinoActionSheetAction(
